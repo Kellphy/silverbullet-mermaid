@@ -57,6 +57,8 @@ You can use the `mermaid` config to tweak a few things:
       integrity = "new integrity hash",
       -- or disable integrity checking
       integrity_disabled = true
+      -- optional: set theme ("default", "dark", "forest", "neutral")
+      theme = "dark",
       -- optional: register icon packs 
       icon_packs = {
         {

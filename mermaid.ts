@@ -21,10 +21,13 @@ export async function widget(
     }
   }
 
+  const theme = config?.theme || "default";
+
   return {
     html: `<pre class="mermaid">${bodyText.replaceAll("<", "&lt;")}</pre>`,
     script: `
     loadJsByUrl("https://cdn.jsdelivr.net/npm/mermaid@${mermaidVersion}/dist/mermaid.min.js", ${mermaidHash}).then(() => {
+      mermaid.initialize({ startOnLoad: false, theme: "${theme}" });
       mermaid.init().then(updateHeight);
       mermaid.registerIconPacks([${packs}]);
     });
